@@ -9,6 +9,12 @@ if (isset($_POST["pesan-tiket"]) || isset($_POST["history"])) {
     }
     exit();
 }
+<<<<<<< HEAD
+=======
+
+// nge tes nih bang
+
+>>>>>>> 9656342d91dbbfc94b37e9a28482bac7ae83d20e
 ?>
 
 <!DOCTYPE html>
