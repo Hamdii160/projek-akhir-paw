@@ -1,27 +1,31 @@
 <?php
 session_start();
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    include 'db.php';
+// if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if(isset($_POST["login"])) {
+    include '../db.php';
 
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $query = $conn->prepare("SELECT * FROM users WHERE username = ? AND password = ?");
-    $query->execute([$username, $password]);
-    $user = $query->fetch();
+    // Query ke database
+    $query = "SELECT * FROM user WHERE username = '$username' AND password = '$password'";
+    $result = mysqli_query($conn, $query);
 
-    if ($user) {
+    // Cek hasil query
+    if (mysqli_num_rows($result) > 0) {
+        session_start();
+        $user = mysqli_fetch_assoc($result);
         $_SESSION['user'] = $user['username'];
-        header('Location: index.php');
+        header('Location: ../index.php');
+        exit;
     } else {
         $error = "Username atau password salah!";
     }
-
 }
-
-
-
 ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,9 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <input type="text" name="username" id="username" required>
                     <label for="password">Password:</label>
                     <input type="password" name="password" id="password" required>
-                    <button type="submit" class="btn btn-primary">Login</button>
-                </form>
-                <form action="" method="post">
+                    <button type="submit" class="btn btn-primary" name="login">Login</button>
                     <button name="kembali" class="btn btn-secondary">Kembali</button>
                 </form>
                 <p class="text-center mt-3">Belum punya akun? <a href="register.php">Daftar sekarang</a></p>

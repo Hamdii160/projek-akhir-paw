@@ -90,6 +90,7 @@ body, html {
     color: rgb(0, 119, 255); /* Warna saat hover (opsional) */
 }
 
+
 @media (max-width: 768px) {
     .hero-section, .content-section {
         height: auto;
