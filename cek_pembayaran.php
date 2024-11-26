@@ -18,16 +18,68 @@ if (isset($_POST["pesan-tiket"]) || isset($_POST["history"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gili Labak</title>
+    <link href="style/style.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="img/logoGili.png">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="style/style.css" rel="stylesheet">
+    <style>
+        .status-container {
+            margin: 100px auto 0;
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .status-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #4b4b4b;
+        }
+        .table-container {
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .btn-payment {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 0;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .btn-payment:hover {
+            background-color: #45a049;
+        }
+        .status {
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            color: red;
+        }
+    </style>
 </head>
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-sm navbar-dark fixed-top bg-primary">
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top">
         <div class="container">
             <div class="logo">
                 <img src="img/logoGili.png" alt="Gili Labak Logo">
@@ -52,11 +104,30 @@ if (isset($_POST["pesan-tiket"]) || isset($_POST["history"])) {
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <div class="hero-section">
-
+    <!-- Status Pemesanan -->
+    <div class="status-container">
+        <h2>Status Pemesanan</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nama</th>
+                        <th>Nomor Telp</th>
+                        <th>Tgl Booking</th>
+                        <th>Tipe Tiket</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="4" class="status">Belum Dibayar</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <a href="pembayaran.php"><button class="btn-payment">Pembayaran</button></a>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

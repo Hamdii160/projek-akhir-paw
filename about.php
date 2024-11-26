@@ -1,10 +1,3 @@
-<?php 
-
-
-
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,14 +6,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gili Labak</title>
     <link rel="icon" type="image/png" href="img/logoGili.png">
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="style/style_about.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="style/style.css" rel="stylesheet">
     <style>
+        .content-section {
+            padding-top: 100px; /* Space between navbar and content */
+            margin-bottom: 30px;
+        }
 
+        .content-section h2 {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .content-img {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .wrapper {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .wrapper img {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .wrapper h5 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .wrapper p.img-caption {
+            font-size: 0.9rem;
+            color: #ffff;
+            padding-top: 20px;
+        }
+
+        .wrapper:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .wrapper:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        @media (max-width: 768px) {
+            .wrapper {
+                flex-direction: column !important;
+                align-items: center;
+            }
+
+            .wrapper img {
+                width: 100%;
+                max-width: 400px;
+            }
+        }
     </style>
 </head>
 
 <body>
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-sm navbar-dark fixed-top bg-primary">
         <div class="container">
             <div class="logo">
@@ -31,29 +85,13 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav me-auto">
+                <ul class="navbar-nav me-auto">
                     <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
-<<<<<<< HEAD
                     <li class="nav-item"><a class="nav-link" href="tiket.php">Tiket</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.php">Tentang</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.php">Kontak</a></li>
                     <li class="nav-item"><a class="nav-link" href="report.php">Report</a></li>
                 </ul>
-=======
-                        <li class="nav-item"><a class="nav-link" href="about.php">Tentang</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.php">Kontak</a></li>
-                        <li class="nav-item"><a class="nav-link" href="report.php">Report</a></li>
-                    </ul>
-                    <?php if(!empty($_SESSION["user"])) : ?>
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="tiket.php">Tiket</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.php">Tentang</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.php">Kontak</a></li>
-                        <li class="nav-item"><a class="nav-link" href="report.php">Report</a></li>
-                    </ul>
-                    <?php endif; ?>
->>>>>>> main
                 <div class="d-flex align-items-center">
                     <span class="theme-icon me-3">🌙</span>
                     <a href="user/login.php" class="btn btn-outline-light">Login</a>
@@ -62,6 +100,7 @@
         </div>
     </nav>
 
+    <!-- Content Section -->
     <section class="content-section">
         <div class="container">
             <h2>Pulau Gili Labak</h2>
