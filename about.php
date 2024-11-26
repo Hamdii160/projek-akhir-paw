@@ -33,6 +33,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav me-auto">
                     <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
+<<<<<<< HEAD
+                    <li class="nav-item"><a class="nav-link" href="tiket.php">Tiket</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.php">Tentang</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.php">Kontak</a></li>
+                    <li class="nav-item"><a class="nav-link" href="report.php">Report</a></li>
+                </ul>
+=======
                         <li class="nav-item"><a class="nav-link" href="about.php">Tentang</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.php">Kontak</a></li>
                         <li class="nav-item"><a class="nav-link" href="report.php">Report</a></li>
@@ -46,6 +53,7 @@
                         <li class="nav-item"><a class="nav-link" href="report.php">Report</a></li>
                     </ul>
                     <?php endif; ?>
+>>>>>>> main
                 <div class="d-flex align-items-center">
                     <span class="theme-icon me-3">🌙</span>
                     <a href="user/login.php" class="btn btn-outline-light">Login</a>
