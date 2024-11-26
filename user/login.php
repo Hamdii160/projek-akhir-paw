@@ -6,7 +6,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // Cek database
     $query = $conn->prepare("SELECT * FROM users WHERE username = ? AND password = ?");
     $query->execute([$username, $password]);
     $user = $query->fetch();
@@ -17,7 +16,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     } else {
         $error = "Username atau password salah!";
     }
+
+    if( isset($_POST["kembali"])) {
+        header("Location: index.php");
+        exit;
+    }
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +42,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <label for="password">Password:</label>
         <input type="password" name="password" id="password" required>
         <button type="submit">Login</button>
+
     </form>
+
+    <form action="" method="post">
+        <button name="kembali">Kembali</button>
+    </form>
+
+    
     <p>Belum punya akun? <a href="register.php">Daftar sekarang</a></p>
 </body>
 </html>

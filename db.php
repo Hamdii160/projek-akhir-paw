@@ -1,7 +1,7 @@
 <?php
 // Database connection
 $host = 'localhost';
-$dbname = 'gililabak';
+$dbname = 'wisata';
 $user = 'root';
 $pass = '';
 

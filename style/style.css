@@ -73,6 +73,24 @@ body, html {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
+.hero-section .form-buttons {
+    display: inline-flex;
+    justify-content: center; 
+    padding: 0; 
+    margin: 0; 
+}
+
+.hero-section button {
+    border: none;
+    padding: 10px 10px;
+    margin: 10px;
+    font-size: 1rem;
+}
+
+.hero-section button:hover {
+    color: rgb(0, 119, 255); /* Warna saat hover (opsional) */
+}
+
 /* Content Section Styling */
 .content-section {
     background: linear-gradient(rgba(0, 0, 0, 0.5), #00000080), 
