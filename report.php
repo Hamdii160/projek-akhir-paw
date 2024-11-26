@@ -46,7 +46,7 @@ if (isset($_POST["pesan-tiket"]) || isset($_POST["history"])) {
                 </ul>
                 <div class="d-flex align-items-center">
                     <span class="theme-icon me-3">🌙</span>
-                    <a href="#" class="btn btn-outline-light">Login</a>
+                    <a href="user/login.php" class="btn btn-outline-light">Login</a>
                 </div>
             </div>
         </div>
@@ -54,7 +54,7 @@ if (isset($_POST["pesan-tiket"]) || isset($_POST["history"])) {
 
     <!-- Hero Section -->
     <div class="hero-section">
-        
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
