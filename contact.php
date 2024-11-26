@@ -169,7 +169,7 @@ if (isset($_POST["pesan-tiket"]) || isset($_POST["history"])) {
             gap: 15px;
             margin-top: 20px;
         }
- 
+
         .social-media a img {
             width: 50px;
             height: 50px;

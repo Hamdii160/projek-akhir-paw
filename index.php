@@ -1,17 +1,14 @@
 <?php
 session_start();
 
-if (isset($_POST["pesan-tiket"]) || isset($_POST["pembayaran"])) {
+if (isset($_POST["pesan-tiket"]) || isset($_POST["history"])) {
     if (empty($_SESSION["user"])) {
-        header("Location: user/login.php");
-        die;
+        header("Location: login.php");
     } else {
-        echo $_SESSION["user"];
-        header("Location: tiket/tiket.php");
+        header("Location: add_tiket.php");
     }
     exit();
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -22,11 +19,14 @@ if (isset($_POST["pesan-tiket"]) || isset($_POST["pembayaran"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gili Labak</title>
     <link rel="icon" type="image/png" href="img/logoGili.png">
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
     <link href="style/style.css" rel="stylesheet">
 </head>
 
 <body>
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-sm navbar-dark fixed-top bg-primary">
         <div class="container">
             <div class="logo">
@@ -37,45 +37,30 @@ if (isset($_POST["pesan-tiket"]) || isset($_POST["pembayaran"])) {
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <?php if(!empty($_SESSION["user"])) : ?>
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="tiket/tiket.php">Tiket</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.php">Tentang</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.php">Kontak</a></li>
-                        <li class="nav-item"><a class="nav-link" href="report.php">Report</a></li>
-                    </ul>
-                <?php elseif(empty($_SESSION["user"])) : ?>
-                    <ul class="navbar-nav me-auto">
+                <ul class="navbar-nav me-auto">
                     <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.php">Tentang</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.php">Kontak</a></li>
-                        <li class="nav-item"><a class="nav-link" href="report.php">Report</a></li>
-                    </ul>
-                <?php endif; ?>
+                    <li class="nav-item"><a class="nav-link" href="tiket.php">Tiket</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.php">Tentang</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.php">Kontak</a></li>
+                    <li class="nav-item"><a class="nav-link" href="report.php">Report</a></li>
+                </ul>
                 <div class="d-flex align-items-center">
                     <span class="theme-icon me-3">🌙</span>
-                <?php if(empty($_SESSION["user"])) : ?>
                     <a href="user/login.php" class="btn btn-outline-light">Login</a>
-                <?php elseif(!empty($_SESSION["user"])) : ?>
-                    <span id="user">Hallo <?= $_SESSION["user"] ?></span>
-                <?php endif; ?>
                 </div>
             </div>
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <div class="hero-section">
         <div class="container">
             <h3>Pulau Gili Labak</h3>
             <h1>Nikmati Salah Satu Keindahan di <br>Pulau Madura yang Menenangkan Jiwa</h1>
-            <form action="" class="form-buttons" method="post">
-                <button name="pesan-tiket" class="btn btn-light mt-4">Pesan Tiket</button>
-                <button name="pembayaran" class="btn btn-light mt-4">Cek Pembayaran</button>
-            </form>
+            <a href="tiket.php" class="btn btn-light mt-4">Pesan Tiket</a>
+            <a href="cek_pembayaran.php" class="btn btn-light mt-4">Cek pembayaran</a>
         </div>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
